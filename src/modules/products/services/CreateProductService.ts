@@ -1,7 +1,7 @@
 import AppError from '@shared/http/erros/AppError';
 import { getCustomRepository } from 'typeorm';
-import Product from '../../../../../moduless/Products';
-import { ProductRepository } from '../repositories/ProductsRepository';
+import Product from '../typeorm/entities/Products';
+import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
 
 // a interface vai tipar as informações, dados da requisição do usuários, a informação tá vendo do request.
 interface IRequest {
