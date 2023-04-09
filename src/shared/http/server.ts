@@ -7,12 +7,15 @@ import { errors } from 'celebrate';
 import routes from './routes';
 import AppError from './erros/AppError';
 import '@shared/http/typeorm';
+import uploadConfig from '@config/upload';
 
 const app = express();
 
 app.use(cors()); // sem parâmetro aceitando qualquer origem.
 
 app.use(express.json()); // a api vai trabalhar com o padrão json.
+
+app.use('/file', express.static(uploadConfig.directory)); // rota estática para facilitar a imagem de upload por parte do front end. sendo possível acessar o caminho completo para achar o avatar de cada usuário.
 
 app.use(routes);
 // eslint-disable-next-line @typescript-eslint/no-empty-function

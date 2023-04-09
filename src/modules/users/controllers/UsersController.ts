@@ -6,6 +6,8 @@ export default class UsersController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listUser = new ListUserService();
 
+    console.log(request.user.id); // indicar que a requesição tem a id do usuário,isto a gt colocou no isAuthenticated.
+
     const users = await listUser.execute(); //pegar todos os registros.
 
     return response.json(users);
